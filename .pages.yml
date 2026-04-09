@@ -1,0 +1,49 @@
+media:
+  input: assets/pictures
+  output: assets/pictures
+
+content:
+  - name: news
+    label: News
+    type: file
+    path: data/news.json
+    format: json
+    list: true
+    view:
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - name: id
+        label: ID
+        type: number
+        hidden: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: category
+        label: Category
+        type: select
+        required: true
+        options:
+          values:
+            - value: upcoming
+              label: Upcoming
+            - value: award
+              label: Award
+            - value: community
+              label: Community
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: YYYY-MM-DD
+      - name: excerpt
+        label: Excerpt
+        type: text
+        required: true
+      - name: image
+        label: Image
+        type: image
