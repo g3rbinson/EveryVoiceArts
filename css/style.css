@@ -13,8 +13,8 @@
   --clr-navy:        #111111;   /* piano black */
   --clr-navy-mid:    #1c1c1c;
   --clr-navy-light:  #2d2d2d;
-  --clr-gold:        #444444;   /* charcoal accent */
-  --clr-gold-light:  #666666;
+  --clr-gold:        #000000;   /* pitch black accent */
+  --clr-gold-light:  #222222;
   --clr-gold-pale:   #f0f0f0;   /* near-white tint */
   --clr-cream:       #ffffff;   /* pure white page bg */
   --clr-white:       #ffffff;
@@ -24,7 +24,7 @@
   --clr-overlay:     rgba(0, 0, 0, 0.72);
 
   /* Gradients */
-  --grad-hero: linear-gradient(160deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.52) 100%);
+  --grad-hero: linear-gradient(160deg, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.18) 100%);
   --grad-gold:  linear-gradient(90deg, var(--clr-gold) 0%, var(--clr-gold-light) 100%);
 
   /* Typography */
@@ -1070,3 +1070,205 @@ ul { list-style: none; }
   body { background: white; color: black; }
   .hero { min-height: auto; padding: 2rem; }
 }
+
+/* ============================================================
+   WHITE / PIANO-BLACK THEME OVERRIDES
+   Inverts every dark-background component to white.
+   Piano black (#000 / #111) is used only as a deliberate accent:
+   nav border, event date blocks, footer, and text.
+   ============================================================ */
+
+/* ── Navigation — white bar, black text ─────────────────────── */
+.site-nav {
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+.site-nav.scrolled { box-shadow: 0 2px 12px rgba(0,0,0,.10); }
+
+.nav-logo .logo-title { color: var(--clr-text); }
+.nav-logo .logo-sub   { color: var(--clr-gold); }
+
+.nav-links a { color: rgba(0, 0, 0, .65); }
+.nav-links a:hover  { color: var(--clr-gold); background: rgba(0,0,0,.05); }
+.nav-links a.active { color: var(--clr-gold); }
+.nav-links a.coming-soon { color: rgba(0,0,0,.25); }
+.nav-links a.coming-soon::after {
+  background: var(--clr-text);
+  color: var(--clr-white);
+}
+
+.nav-toggle span { background: var(--clr-text); }
+
+@media (max-width: 768px) {
+  .nav-links {
+    background: var(--clr-white);
+    border-top: 1px solid rgba(0,0,0,.08);
+  }
+  .nav-links a {
+    color: var(--clr-text);
+    border-bottom: 1px solid rgba(0,0,0,.06);
+  }
+  .nav-links a:hover { color: var(--clr-gold); background: rgba(0,0,0,.04); }
+}
+
+/* ── Buttons — invert outline for light backgrounds ─────────── */
+.btn-primary {
+  background: var(--clr-text);
+  color: var(--clr-white);
+  border-color: var(--clr-text);
+}
+.btn-primary:hover {
+  background: #333;
+  border-color: #333;
+  box-shadow: 0 4px 16px rgba(0,0,0,.25);
+}
+
+.btn-outline {
+  color: var(--clr-text);
+  border-color: var(--clr-text);
+}
+.btn-outline:hover {
+  background: var(--clr-text);
+  color: var(--clr-white);
+}
+
+.btn-outline-gold {
+  color: var(--clr-text);
+  border-color: var(--clr-text);
+}
+.btn-outline-gold:hover {
+  background: var(--clr-text);
+  color: var(--clr-white);
+  box-shadow: 0 4px 16px rgba(0,0,0,.2);
+}
+
+/* ── Page Banner — white bg, black heading ───────────────────── */
+.page-banner {
+  background: #f5f5f5;
+  border-bottom: 3px solid var(--clr-text);
+}
+.page-banner::before { display: none; }
+.page-banner h1 { color: var(--clr-text); }
+.page-banner h1 span { color: var(--clr-gold); }
+.page-banner p { color: var(--clr-text-muted); }
+
+/* ── Season Strip — white, black text ───────────────────────── */
+.season-strip {
+  background: var(--clr-white);
+  border-bottom: 1px solid var(--clr-border);
+  border-top: 1px solid var(--clr-border);
+}
+.season-strip-text { color: var(--clr-text-muted); }
+.season-strip-text strong { color: var(--clr-text); font-size: var(--fs-base); }
+
+/* ── Dark Sections — flip to light gray ─────────────────────── */
+.section-dark {
+  background: #f5f5f5;
+  color: var(--clr-text);
+}
+.section-dark .section-title-block p { color: var(--clr-text-muted); }
+.section-dark .eyebrow { color: var(--clr-gold); }
+
+/* ── Featured Performance Card ───────────────────────────────── */
+.featured-card-img::after {
+  background: linear-gradient(to right, transparent 55%, #f5f5f5);
+}
+.featured-card-body {
+  background: #f5f5f5;
+}
+.featured-card-body .tag {
+  background: rgba(0,0,0,.07);
+  color: var(--clr-text);
+  border: 1px solid rgba(0,0,0,.15);
+}
+.featured-card-body h3 { color: var(--clr-text); }
+.featured-card-body .composer {
+  color: var(--clr-text-muted);
+  letter-spacing: 0.08em;
+}
+.featured-card-body p { color: var(--clr-text-muted); }
+.featured-meta-item { color: var(--clr-text-muted); }
+.featured-meta-item svg { color: var(--clr-text); }
+
+@media (max-width: 900px) {
+  .featured-card-img::after {
+    background: linear-gradient(to bottom, transparent 55%, #f5f5f5);
+  }
+}
+
+/* ── People Section ──────────────────────────────────────────── */
+.people-section { background: #f5f5f5; }
+
+.person-card { color: var(--clr-text); }
+.person-card-img {
+  background: var(--clr-border);
+  border-color: rgba(0,0,0,.12);
+}
+.person-card-img svg { color: var(--clr-text-muted); opacity: .5; }
+.person-card h3 { color: var(--clr-text); }
+.person-card .role { color: var(--clr-gold); }
+.person-card p { color: var(--clr-text-muted); }
+
+.people-section > div:last-child p { color: var(--clr-text-muted) !important; }
+
+/* ── Section Title Block on dark sections ───────────────────── */
+.people-section .section-title-block h2 { color: var(--clr-text) !important; }
+.people-section .section-title-block p  { color: var(--clr-text-muted); }
+
+/* ── Schedule — Event Date Block stays piano black ───────────── */
+/* (intentional key accent — black square on white card) */
+
+/* ── News Sidebar ────────────────────────────────────────────── */
+.sidebar-widget h3 {
+  color: var(--clr-text);
+  border-bottom-color: var(--clr-text);
+}
+
+/* ── Store Coming Soon — white page ─────────────────────────── */
+.store-coming {
+  background: var(--clr-white);
+}
+.store-coming::before { display: none; }
+.store-coming h1 { color: var(--clr-text); }
+.store-coming h1 em { color: var(--clr-gold); font-style: italic; }
+.store-coming p { color: var(--clr-text-muted); }
+.store-coming .icon-curtain { filter: invert(1); }
+
+.notify-form input[type="email"] {
+  border: 1px solid var(--clr-border);
+  background: var(--clr-white);
+  color: var(--clr-text);
+}
+.notify-form input[type="email"]::placeholder { color: var(--clr-text-muted); }
+.notify-form input[type="email"]:focus { border-color: var(--clr-text); }
+
+/* ── Skeleton shimmer on white ───────────────────────────────── */
+.skeleton {
+  background: linear-gradient(90deg, #ebebeb 25%, #f5f5f5 50%, #ebebeb 75%);
+  background-size: 200% 100%;
+}
+
+/* ── Mission quote block ─────────────────────────────────────── */
+.mission {
+  background: #f5f5f5;
+}
+.mission blockquote { color: var(--clr-text); }
+.mission blockquote::before,
+.mission blockquote::after { color: var(--clr-gold); }
+
+/* ── Card dark variant ───────────────────────────────────────── */
+.card-dark {
+  background: #f0f0f0;
+  border-color: rgba(0,0,0,.08);
+  color: var(--clr-text);
+}
+.card-dark .card-title   { color: var(--clr-text); }
+.card-dark .card-meta    { color: var(--clr-text-muted); }
+.card-dark .card-excerpt { color: var(--clr-text-muted); }
+
+/* ── Card image placeholder on white ────────────────────────── */
+.card-img-placeholder {
+  background: #e8e8e8;
+}
+.card-img-placeholder svg { opacity: .25; color: var(--clr-text); }
+
