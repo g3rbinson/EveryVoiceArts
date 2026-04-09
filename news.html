@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EveryVoice Emerald Coast Arts — news about upcoming performances, awards, and community events.">
+  <title>News — EveryVoice Emerald Coast Arts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <a href="index.html" aria-label="EveryVoice Emerald Coast Arts — Home">
+          <span class="logo-title">EveryVoice</span>
+          <span class="logo-sub">Community Center</span>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="primary-nav" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="store.html" class="coming-soon" aria-label="Store — Coming Soon" tabindex="-1" aria-disabled="true">Store</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Page Banner ─────────────────────────────────────────── -->
+  <header class="page-banner" aria-labelledby="news-heading">
+    <h1 id="news-heading">
+      <span>From the Company</span>
+      News &amp; Updates
+    </h1>
+    <p>Performances, awards, and everything happening in our community.</p>
+  </header>
+
+  <!-- ── News Layout ─────────────────────────────────────────── -->
+  <main>
+    <div class="news-layout">
+
+      <!-- Main content column -->
+      <div>
+        <!-- Featured story -->
+        <article class="news-featured" id="news-featured" aria-label="Featured news story" aria-live="polite">
+          <div class="skeleton" style="height:380px" aria-hidden="true"></div>
+          <div class="news-featured-body">
+            <div class="skeleton" style="height:24px;width:120px;margin-bottom:1rem" aria-hidden="true"></div>
+            <div class="skeleton" style="height:40px;margin-bottom:.75rem" aria-hidden="true"></div>
+            <div class="skeleton" style="height:16px;width:160px;margin-bottom:1rem" aria-hidden="true"></div>
+            <div class="skeleton" style="height:80px" aria-hidden="true"></div>
+          </div>
+        </article>
+
+        <!-- News card grid -->
+        <div class="news-grid" id="news-grid" aria-label="More news stories" aria-live="polite">
+          <div class="skeleton skeleton-row" aria-hidden="true"></div>
+          <div class="skeleton skeleton-row" aria-hidden="true"></div>
+          <div class="skeleton skeleton-row" aria-hidden="true"></div>
+          <div class="skeleton skeleton-row" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="news-sidebar" aria-label="News categories">
+        <div class="sidebar-widget">
+          <h3>Filter by Category</h3>
+          <ul role="list">
+            <li>
+              <button class="sidebar-filter-btn active" data-filter="all">
+                All Stories
+              </button>
+            </li>
+            <li>
+              <button class="sidebar-filter-btn" data-filter="upcoming">
+                Upcoming Performances
+              </button>
+            </li>
+            <li>
+              <button class="sidebar-filter-btn" data-filter="award">
+                Awards &amp; Honors
+              </button>
+            </li>
+            <li>
+              <button class="sidebar-filter-btn" data-filter="community">
+                Community News
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3>Upcoming Events</h3>
+          <ul role="list" id="sidebar-events">
+            <!-- Populated by JS -->
+            <li><div class="skeleton" style="height:20px" aria-hidden="true"></div></li>
+            <li><div class="skeleton" style="height:20px" aria-hidden="true"></div></li>
+            <li><div class="skeleton" style="height:20px" aria-hidden="true"></div></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget" style="background:var(--clr-navy);border-color:rgba(201,168,76,.2);">
+          <h3 style="color:var(--clr-gold);">Get Tickets</h3>
+          <p style="color:rgba(255,255,255,.65);font-size:var(--fs-sm);line-height:1.8;margin-bottom:1rem;">
+            Reserve your seats for any of our 2026 season performances.
+          </p>
+          <a href="schedule.html" class="btn btn-primary" style="width:100%;justify-content:center;">
+            View Schedule
+          </a>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-title">EveryVoice</span>
+        <span class="logo-sub">Community Center</span>
+        <p>Bringing the power of opera to our community — one unforgettable performance at a time.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Us</h4>
+        <address>
+          Holly Community Center<br>
+          123 Main Street<br>
+          Holly, MI 48442<br><br>
+          <a href="mailto:info@hollycommunityopera.org">info@hollycommunityopera.org</a><br>
+          <a href="tel:+15555550100">(555) 555-0100</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footer-year">2026</span> EveryVoice Emerald Coast Arts. All rights reserved.</p>
+      <p>Made with love for our community.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    const sidebarBtns = Array.from(document.querySelectorAll('.sidebar-filter-btn'));
+
+    Promise.all([
+      loadJSON('data/news.json'),
+      loadJSON('data/events.json'),
+    ]).then(function([news, events]) {
+      renderNews(news, 'news-featured', 'news-grid', sidebarBtns);
+
+      // Populate upcoming events in sidebar
+      const sidebarEvents = document.getElementById('sidebar-events');
+      if (sidebarEvents) {
+        const upcoming = events
+          .filter(function(e) { return !parseDateParts(e.date).isPast; })
+          .slice(0, 4);
+
+        if (upcoming.length === 0) {
+          sidebarEvents.innerHTML = '<li style="font-size:.875rem;color:var(--clr-text-muted)">No upcoming events.</li>';
+        } else {
+          sidebarEvents.innerHTML = upcoming.map(function(ev) {
+            const d = parseDateParts(ev.date);
+            return `<li>
+              <a href="schedule.html" style="
+                display:flex; gap:.75rem; align-items:flex-start;
+                font-size:.8125rem; color:var(--clr-text); line-height:1.5;
+                transition:color .2s;
+              " onmouseover="this.style.color='var(--clr-gold)'" onmouseout="this.style.color='var(--clr-text)'">
+                <span style="
+                  background:var(--clr-navy); color:var(--clr-gold);
+                  font-size:.625rem; font-weight:700; letter-spacing:.1em;
+                  text-transform:uppercase; padding:2px 6px; border-radius:3px;
+                  white-space:nowrap; margin-top:2px; flex-shrink:0;
+                ">${d.month} ${d.day}</span>
+                <span>${escHtml(ev.title)}</span>
+              </a>
+            </li>`;
+          }).join('');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

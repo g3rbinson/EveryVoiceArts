@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EveryVoice — bringing world-class opera and vocal performance to our community. See upcoming shows, news, and how to get involved.">
+  <title>EveryVoice — Emerald Coast Arts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <a href="index.html" aria-label="EveryVoice — Emerald Coast Arts — Home">
+          <span class="logo-title">EveryVoice</span>
+          <span class="logo-sub">Emerald Coast Arts</span>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="primary-nav" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="store.html" class="coming-soon" aria-label="Store — Coming Soon" tabindex="-1" aria-disabled="true">Store</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Hero ───────────────────────────────────────────────── -->
+  <section class="hero" aria-label="Welcome">
+    <div class="hero-bg" role="img" aria-label="Dramatic opera performance on stage"></div>
+    <div class="hero-content container">
+      <span class="hero-eyebrow">Emerald Coast Arts</span>
+      <h1 class="hero-title">Opera <em>IS</em> Community.</h1>
+      <p class="hero-subtitle">
+        World-class vocal performance, passionate storytelling, and the
+        transformative power of opera — right in the heart of our community.
+      </p>
+      <div class="hero-actions">
+        <a href="schedule.html" class="btn btn-primary">View Full Schedule</a>
+        <a href="about.html" class="btn btn-outline">Meet the Ensemble</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ── Season Strip ────────────────────────────────────────── -->
+  <div class="season-strip" aria-label="Current season announcement">
+    <div class="season-strip-inner">
+      <p class="season-strip-text">
+        <strong>2026 Season Now Underway</strong> &nbsp;·&nbsp;
+        Six incredible performances &nbsp;·&nbsp; May through December
+      </p>
+      <a href="schedule.html" class="btn btn-outline-gold">See All Dates</a>
+    </div>
+  </div>
+
+  <!-- ── Featured Upcoming Performance ──────────────────────── -->
+  <section class="section section-dark" aria-labelledby="featured-heading">
+    <div class="container">
+      <div class="section-title-block">
+        <span class="eyebrow">Next on Stage</span>
+        <h2 id="featured-heading">Featured Performance</h2>
+        <p>Don't miss our next production — an evening you'll never forget.</p>
+      </div>
+
+      <div class="featured-card" id="home-next-event">
+        <div class="featured-card-img" role="img" aria-label="Opera performance photography"></div>
+        <div class="featured-card-body">
+          <span class="tag">Opera</span>
+          <h3>La Traviata</h3>
+          <p class="composer">by Giuseppe Verdi</p>
+          <p>
+            Verdi's heartbreaking masterpiece follows the ill-fated romance between
+            Violetta and Alfredo. A breathtaking night of arias you'll carry with you forever.
+          </p>
+          <ul class="featured-meta" aria-label="Event details">
+            <li class="featured-meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              <span>May 15, 2026 · 7:30 PM</span>
+            </li>
+            <li class="featured-meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <span>Holly Community Center Main Stage</span>
+            </li>
+          </ul>
+          <div style="margin-top: var(--sp-2);">
+            <a href="schedule.html" class="btn btn-primary">View Details &amp; Tickets</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Mission ─────────────────────────────────────────────── -->
+  <section class="mission" aria-labelledby="mission-heading">
+    <h2 id="mission-heading" class="sr-only">Our Mission</h2>
+    <blockquote>
+      Opera is not an art form for the few — it is a living,
+      breathing expression of the human soul that belongs to everyone.
+    </blockquote>
+    <cite>EveryVoice Emerald Coast Arts Company</cite>
+  </section>
+
+  <!-- ── Photo Gallery ───────────────────────────────────────── 
+  <section class="gallery-strip" aria-labelledby="gallery-heading">
+    <div class="container">
+      <div class="section-title-block" style="margin-bottom: var(--sp-8);">
+        <span class="eyebrow">On Stage &amp; Behind the Scenes</span>
+        <h2 id="gallery-heading">Life in the Company</h2>
+      </div>
+      <div class="gallery-grid" aria-label="Photo gallery">
+        <div class="g-main">
+          <img src="assets/pictures/shutterstock_2295003825.jpg"
+               alt="Opera performers on stage under dramatic lighting"
+               loading="eager">
+        </div>
+        <div>
+          <img src="assets/pictures/shutterstock_2499307679.jpg"
+               alt="Close-up of an opera soprano in costume"
+               loading="lazy">
+        </div>
+        <div>
+          <img src="assets/pictures/shutterstock_2552284967.jpg"
+               alt="Full company ensemble on stage"
+               loading="lazy">
+        </div>
+        <div>
+          <img src="assets/pictures/shutterstock_2705248725.jpg"
+               alt="Backstage preparation before a performance"
+               loading="lazy">
+        </div>
+        <div>
+          <img src="assets/pictures/shutterstock_2710857497.jpg"
+               alt="Conductor leading the orchestra"
+               loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ── Latest News ────────────────────────────────────────── -->
+  <section class="section" aria-labelledby="news-heading">
+    <div class="container">
+      <div class="section-title-block">
+        <span class="eyebrow">Stay in the Loop</span>
+        <h2 id="news-heading">Latest News</h2>
+        <p>Updates on performances, awards, and community happenings.</p>
+      </div>
+      <div class="card-grid" id="home-news-grid" aria-label="Recent news articles">
+        <!-- Populated by JS from data/news.json -->
+        <div class="skeleton skeleton-row" aria-hidden="true"></div>
+        <div class="skeleton skeleton-row" aria-hidden="true"></div>
+        <div class="skeleton skeleton-row" aria-hidden="true"></div>
+      </div>
+      <div style="text-align:center; margin-top: var(--sp-10);">
+        <a href="news.html" class="btn btn-outline-gold">All News</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Banner ─────────────────────────────────────────── -->
+  <section style="
+    background: var(--clr-navy);
+    padding: var(--sp-20) var(--sp-6);
+    text-align: center;
+  " aria-labelledby="cta-heading">
+    <h2 id="cta-heading" style="
+      font-family: var(--font-serif);
+      font-size: clamp(var(--fs-2xl), 4vw, var(--fs-4xl));
+      color: var(--clr-white); margin-bottom: var(--sp-4);
+    ">Ready to experience opera?</h2>
+    <p style="
+      color: rgba(255,255,255,.6); font-size: var(--fs-lg); font-weight: 300;
+      margin-bottom: var(--sp-8); max-width: 42ch; margin-inline: auto;
+    ">
+      Reserve your seats for our upcoming season and support the arts in your community.
+    </p>
+    <div style="display:flex; gap: var(--sp-4); justify-content: center; flex-wrap: wrap;">
+      <a href="schedule.html" class="btn btn-primary">Browse the Schedule</a>
+      <a href="about.html" class="btn btn-outline">About the Company</a>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────────── -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-title">EveryVoice</span>
+        <span class="logo-sub">Emerald Coast Arts</span>
+        <p>Bringing the power of opera to our community — one unforgettable performance at a time.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Us</h4>
+        <address>
+          Emerald Coast Arts<br>
+          123 Main Street<br>
+          Holly, MI 48442<br><br>
+          <a href="mailto:info@everyvoice.org">info@everyvoice.org</a><br>
+          <a href="tel:+15555550100">(555) 555-0100</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footer-year">2026</span> EveryVoice — Emerald Coast Arts. All rights reserved.</p>
+      <p>Made with love for our community.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Update footer year dynamically
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    // Load live data into home page sections
+    loadHomePreview();
+  </script>
+</body>
+</html>

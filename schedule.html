@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EveryVoice Emerald Coast Arts — full 2026 performance schedule. Browse upcoming operas, concerts, showcases, and galas.">
+  <title>Schedule — EveryVoice Emerald Coast Arts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <a href="index.html" aria-label="EveryVoice Emerald Coast Arts — Home">
+          <span class="logo-title">EveryVoice</span>
+          <span class="logo-sub">Community Center</span>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="primary-nav" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="store.html" class="coming-soon" aria-label="Store — Coming Soon" tabindex="-1" aria-disabled="true">Store</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Page Banner ─────────────────────────────────────────── -->
+  <header class="page-banner" aria-labelledby="schedule-heading">
+    <h1 id="schedule-heading">
+      <span>2026 Season</span>
+      Performance Schedule
+    </h1>
+    <p>Six unforgettable evenings — from intimate showcases to grand opera.</p>
+  </header>
+
+  <!-- ── Filters ─────────────────────────────────────────────── -->
+  <div class="schedule-filters" role="group" aria-label="Filter events by type">
+    <button class="filter-btn active" data-filter="all">All Events</button>
+    <button class="filter-btn" data-filter="Opera">Opera</button>
+    <button class="filter-btn" data-filter="Concert">Concert</button>
+    <button class="filter-btn" data-filter="Showcase">Showcase</button>
+    <button class="filter-btn" data-filter="Gala">Gala</button>
+  </div>
+
+  <!-- ── Event List ──────────────────────────────────────────── -->
+  <main>
+    <div class="event-list" id="event-list" aria-label="Upcoming events" aria-live="polite">
+      <!-- Skeleton placeholders while JS loads -->
+      <div class="skeleton skeleton-row" aria-hidden="true"></div>
+      <div class="skeleton skeleton-row" aria-hidden="true"></div>
+      <div class="skeleton skeleton-row" aria-hidden="true"></div>
+    </div>
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-title">EveryVoice</span>
+        <span class="logo-sub">Community Center</span>
+        <p>Bringing the power of opera to our community — one unforgettable performance at a time.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Us</h4>
+        <address>
+          Holly Community Center<br>
+          123 Main Street<br>
+          Holly, MI 48442<br><br>
+          <a href="mailto:info@hollycommunityopera.org">info@hollycommunityopera.org</a><br>
+          <a href="tel:+15555550100">(555) 555-0100</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footer-year">2026</span> EveryVoice Emerald Coast Arts. All rights reserved.</p>
+      <p>Made with love for our community.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
+
+    loadJSON('data/events.json').then(function(events) {
+      renderSchedule(events, 'event-list', filterBtns);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "La Traviata Cast Announced — Season Opener Tickets on Sale Now",
+    "category": "upcoming",
+    "date": "2026-04-01",
+    "excerpt": "We are thrilled to announce the full cast for our season-opening production of Verdi's La Traviata. Tickets for the May 15th performance are now available online and at the box office.",
+    "image": "assets/pictures/shutterstock_2499307679.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Holly Community Center Wins State Arts Excellence Award",
+    "category": "award",
+    "date": "2026-03-18",
+    "excerpt": "The EveryVoice Emerald Coast Arts Program has been recognized with the State Arts Excellence Award for outstanding contributions to community arts education. We are deeply honored by this recognition.",
+    "image": ""
+  },
+  {
+    "id": 3,
+    "title": "Summer Scenes Concert — Free Outdoor Performance July 4th",
+    "category": "upcoming",
+    "date": "2026-03-10",
+    "excerpt": "Join us under the stars for a free Independence Day concert at Riverside Park Amphitheater. Our talented performers will sing beloved opera highlights in a relaxed, family-friendly setting.",
+    "image": "assets/pictures/shutterstock_2552284967.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Youth Vocal Program Spring Enrollment Now Open",
+    "category": "community",
+    "date": "2026-03-01",
+    "excerpt": "Spaces are filling up fast for our spring youth vocal training sessions. Open to students ages 8–18, our program builds confidence, technique, and a lifelong love of music.",
+    "image": ""
+  },
+  {
+    "id": 5,
+    "title": "Soprano Maria Deluca Named Regional Performer of the Year",
+    "category": "award",
+    "date": "2026-02-14",
+    "excerpt": "Our own Maria Deluca has been named Regional Performer of the Year by the Tri-State Opera Association. Her portrayal of Violetta last season captivated audiences and critics alike.",
+    "image": ""
+  },
+  {
+    "id": 6,
+    "title": "Community Food Drive at December Gala",
+    "category": "community",
+    "date": "2026-01-28",
+    "excerpt": "This year's Holiday Gala will feature a community food drive benefiting the Holly Area Food Pantry. Guests who bring three or more non-perishable items will receive a complimentary program.",
+    "image": ""
+  }
+]

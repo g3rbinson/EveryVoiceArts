@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EveryVoice Emerald Coast Arts Store — merchandise coming soon. Sign up to be notified when we launch.">
+  <title>Store — EveryVoice Emerald Coast Arts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <a href="index.html" aria-label="EveryVoice Emerald Coast Arts — Home">
+          <span class="logo-title">EveryVoice</span>
+          <span class="logo-sub">Community Center</span>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="primary-nav" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="store.html" class="coming-soon" aria-label="Store — Coming Soon" tabindex="-1" aria-disabled="true">Store</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Coming Soon Content ────────────────────────────────── -->
+  <main>
+    <div class="store-coming" aria-labelledby="store-heading">
+      <div class="store-coming-inner">
+        <div class="icon-curtain" aria-hidden="true">🎭</div>
+        <h1 id="store-heading">The Store is<br><em>Coming Soon</em></h1>
+        <p>
+          We're preparing something special — opera-inspired merchandise,
+          program keepsakes, and gifts for the opera lover in your life.
+          Leave your email and we'll let you know the moment we open our curtain.
+        </p>
+
+        <form class="notify-form" id="notify-form" aria-label="Notify me when the store launches" novalidate>
+          <label for="notify-email" class="sr-only">Your email address</label>
+          <input
+            type="email"
+            id="notify-email"
+            name="email"
+            placeholder="your@email.com"
+            autocomplete="email"
+            required
+            aria-required="true"
+          >
+          <button type="submit" class="btn btn-primary">Notify Me</button>
+        </form>
+
+        <p id="notify-feedback" role="status" aria-live="polite" style="
+          min-height: 1.5em;
+          color: var(--clr-gold-light);
+          font-size: var(--fs-sm);
+          margin-top: calc(-1 * var(--sp-4));
+          margin-bottom: var(--sp-4);
+        "></p>
+
+        <div style="display:flex;gap:var(--sp-4);justify-content:center;flex-wrap:wrap;">
+          <a href="schedule.html" class="btn btn-outline">Browse the Schedule</a>
+          <a href="index.html" class="btn btn-outline">Back to Home</a>
+        </div>
+
+        <!-- Future product area — hidden until store launches -->
+        <!--
+          DATA STRUCTURE FOR FUTURE PRODUCTS (add to data/products.json):
+          {
+            "id": 1,
+            "name": "EveryVoice Tote Bag",
+            "price": 24.00,
+            "image": "assets/pictures/product-tote.jpg",
+            "description": "A stylish tote featuring our signature opera mask design.",
+            "status": "available",   // "available" | "sold_out" | "coming_soon"
+            "category": "accessories"
+          }
+        -->
+      </div>
+    </div>
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-title">EveryVoice</span>
+        <span class="logo-sub">Community Center</span>
+        <p>Bringing the power of opera to our community — one unforgettable performance at a time.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Us</h4>
+        <address>
+          Holly Community Center<br>
+          123 Main Street<br>
+          Holly, MI 48442<br><br>
+          <a href="mailto:info@hollycommunityopera.org">info@hollycommunityopera.org</a><br>
+          <a href="tel:+15555550100">(555) 555-0100</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footer-year">2026</span> EveryVoice Emerald Coast Arts. All rights reserved.</p>
+      <p>Made with love for our community.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // Notify-me form — stores email in localStorage as a placeholder.
+    // Replace this logic with a real backend / email service call when ready.
+    document.getElementById('notify-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const input    = document.getElementById('notify-email');
+      const feedback = document.getElementById('notify-feedback');
+      const email    = input.value.trim();
+
+      // Basic format check before storing
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        feedback.style.color = '#f87171';
+        feedback.textContent = 'Please enter a valid email address.';
+        return;
+      }
+
+      // Persist locally (swap for API call when backend is ready)
+      try {
+        const list = JSON.parse(localStorage.getItem('store-notify') || '[]');
+        if (!list.includes(email)) {
+          list.push(email);
+          localStorage.setItem('store-notify', JSON.stringify(list));
+        }
+      } catch (_) { /* storage unavailable — non-fatal */ }
+
+      feedback.style.color = 'var(--clr-gold-light)';
+      feedback.textContent = 'Thank you! We\'ll notify you when the store opens.';
+      input.value = '';
+      input.setAttribute('disabled', '');
+      this.querySelector('button').setAttribute('disabled', '');
+    });
+  </script>
+</body>
+</html>
