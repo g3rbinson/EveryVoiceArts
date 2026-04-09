@@ -39,7 +39,7 @@ content:
         type: date
         required: true
         options:
-          format: YYYY-MM-DD
+          format: yyyy-MM-dd
       - name: excerpt
         label: Excerpt
         type: text
