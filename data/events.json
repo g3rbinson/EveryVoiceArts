@@ -1,5 +1,20 @@
 [
   {
+    "id": 2,
+    "title": "The Magic Flute",
+    "composer": "Wolfgang Amadeus Mozart",
+    "category": "Opera",
+    "date": "2026-05-01",
+    "time": "7:30 PM",
+    "venue": "Crestview Community Center Main Stage",
+    "description": "Mozart's enchanting opera follows the adventures of Prince Tamino and his quest to rescue Pamina, the daughter of the Queen of the Night. A magical night of music and wonder.",
+    "tickets": "free",
+    "ticketUrl": "",
+    "eventbriteId": "",
+    "featured": false,
+    "image": ""
+  },
+  {
     "id": 1,
     "title": "La Traviata",
     "composer": "Giuseppe Verdi",
@@ -11,6 +26,8 @@
     "tickets": "free",
     "ticketUrl": "",
     "eventbriteId": "1987206270449",
+    "featured": true,
     "image": ""
   }
+  
 ]

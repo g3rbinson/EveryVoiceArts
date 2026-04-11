@@ -257,9 +257,9 @@ async function loadHomePreview() {
   // Featured upcoming event
   const evContainer = document.getElementById('home-next-event');
   if (evContainer && events.length > 0) {
-    const next = events.find(function (e) {
-      return !parseDateParts(e.date).isPast;
-    }) || events[0];
+    const next = events.find(function (e) { return e.featured; })
+      || events.find(function (e) { return !parseDateParts(e.date).isPast; })
+      || events[0];
     const date = parseDateParts(next.date);
     evContainer.querySelector('.featured-card-body .tag').textContent = next.category;
     evContainer.querySelector('.featured-card-body h3').textContent = next.title;
