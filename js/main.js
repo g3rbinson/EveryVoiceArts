@@ -139,7 +139,9 @@ function renderSchedule(events, containerId, filterBtns) {
             ${ev.description ? `<p class="card-excerpt">${escHtml(ev.description)}</p>` : ''}
           </div>
           <div class="event-action">
-            ${!date.isPast && ev.ticketUrl
+            ${!date.isPast && ev.eventbriteId
+              ? `<button id="eventbrite-widget-modal-trigger-${escAttr(ev.eventbriteId)}" type="button" class="btn btn-outline-gold">Tickets</button>`
+              : !date.isPast && ev.ticketUrl
               ? `<a href="${escAttr(ev.ticketUrl)}" class="btn btn-outline-gold" rel="noopener noreferrer">Tickets</a>`
               : date.isPast
               ? `<span style="font-size:.75rem;color:var(--clr-text-muted);letter-spacing:.08em;text-transform:uppercase;">Completed</span>`

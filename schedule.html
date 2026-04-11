@@ -116,14 +116,34 @@
     </div>
   </footer>
 
+  <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
   <script src="js/main.js"></script>
   <script>
     document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-    const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
+    var filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
 
     loadJSON('data/events.json').then(function(events) {
       renderSchedule(events, 'event-list', filterBtns);
+
+      // Wire up Eventbrite modal triggers for any event with an eventbriteId
+      events.forEach(function(ev) {
+        if (!ev.eventbriteId) return;
+        window.EBWidgets.createWidget({
+          widgetType: 'checkout',
+          eventId: ev.eventbriteId,
+          modal: true,
+          modalTriggerElementId: 'eventbrite-widget-modal-trigger-' + ev.eventbriteId,
+          themeSettings: {
+            brandColor: '#51976e',
+            fontColor:  '#000000',
+            background: '#FFFFFF',
+          },
+          onOrderComplete: function() {
+            console.log('Order complete!');
+          }
+        });
+      });
     });
   </script>
 </body>
