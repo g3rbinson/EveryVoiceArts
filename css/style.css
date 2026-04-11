@@ -13,8 +13,8 @@
   --clr-navy:        #0d1b2a;
   --clr-navy-mid:    #162436;
   --clr-navy-light:  #1e3350;
-  --clr-gold:        #c9a84c;
-  --clr-gold-light:  #e2c97e;
+  --clr-gold:        #51976e;
+  --clr-gold-light:  #51976e;
   --clr-gold-pale:   #f5e9c8;
   --clr-cream:       #faf6ef;
   --clr-white:       #ffffff;
@@ -22,6 +22,12 @@
   --clr-text-muted:  #5a5a72;
   --clr-border:      #ddd4bf;
   --clr-overlay:     rgba(13, 27, 42, 0.72);
+
+  /* Panel Colors — edit these two pairs to retheme all alternating sections */
+  --panel-1:      #ffffff;
+  --panel-1-text: var(--clr-text);
+  --panel-2:      #000000;
+  --panel-2-text: #ffffff;
 
   /* Gradients */
   --grad-hero: linear-gradient(160deg, rgba(13,27,42,0.85) 0%, rgba(13,27,42,0.45) 100%);
@@ -112,7 +118,8 @@ ul { list-style: none; }
 
 /* ── Page Title Banner ──────────────────────────────────────── */
 .page-banner {
-  background: var(--clr-navy);
+  background: var(--panel-2);
+  color: var(--panel-2-text);
   padding: calc(var(--nav-h) + var(--sp-12)) var(--sp-6) var(--sp-12);
   text-align: center;
   position: relative;
@@ -157,7 +164,7 @@ ul { list-style: none; }
 .site-nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   height: var(--nav-h);
-  background: rgba(13, 27, 42, 0.97);
+  background: var(--clr-white);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(201,168,76,.25);
   display: flex; align-items: center;
@@ -178,7 +185,7 @@ ul { list-style: none; }
 .nav-logo .logo-title {
   font-family: var(--font-serif);
   font-size: var(--fs-xl);
-  color: var(--clr-white);
+  color: var(--clr-text);
   letter-spacing: 0.02em;
 }
 .nav-logo .logo-sub {
@@ -197,7 +204,7 @@ ul { list-style: none; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 700;
-  color: rgba(255,255,255,.8);
+  color: rgb(0, 0, 0);
   padding: var(--sp-2) var(--sp-4);
   border-radius: var(--radius-sm);
   transition: color var(--transition), background var(--transition);
@@ -205,7 +212,7 @@ ul { list-style: none; }
 .nav-links a:hover { color: var(--clr-gold); background: rgba(201,168,76,.08); }
 .nav-links a.active { color: var(--clr-gold); }
 .nav-links a.coming-soon {
-  color: rgba(255,255,255,.35);
+  color: rgb(23, 23, 23);
   cursor: default;
   pointer-events: none;
   position: relative;
@@ -319,8 +326,8 @@ ul { list-style: none; }
    FOOTER
    ============================================================ */
 .site-footer {
-  background: var(--clr-navy);
-  color: rgba(255,255,255,.65);
+  background: var(--clr-white);
+  color: var(--clr-text);
   padding: var(--sp-16) var(--sp-6) var(--sp-8);
   border-top: 1px solid rgba(201,168,76,.2);
 }
@@ -334,7 +341,7 @@ ul { list-style: none; }
 .footer-brand .logo-title {
   font-family: var(--font-serif);
   font-size: var(--fs-2xl);
-  color: var(--clr-white);
+  color: var(--clr-text);
   display: block;
   margin-bottom: var(--sp-1);
 }
@@ -453,7 +460,7 @@ ul { list-style: none; }
 
 /* ── Season Highlight Strip ─────────────────────────────────── */
 .season-strip {
-  background: var(--clr-navy);
+  background: var(--panel-2);
   padding: var(--sp-8) var(--sp-6);
   border-bottom: 1px solid rgba(201,168,76,.15);
 }
@@ -463,16 +470,20 @@ ul { list-style: none; }
   gap: var(--sp-6); flex-wrap: wrap;
 }
 .season-strip-text {
-  color: rgba(255,255,255,.8);
+  color: var(--panel-2-text);
   font-size: var(--fs-sm); letter-spacing: 0.1em;
 }
 .season-strip-text strong { color: var(--clr-gold); font-size: var(--fs-base); }
 
 /* ── Featured Performance Section ────────────────────────────── */
-.section { padding: var(--sp-20) var(--sp-6); }
+.section { 
+  padding: var(--sp-20) var(--sp-6); 
+  background: var(--panel-1); 
+  color: var(--panel-1-text);
+}
 .section-dark {
-  background: var(--clr-navy);
-  color: var(--clr-white);
+  background: var(--panel-2);
+  color: var(--panel-2-text);
 }
 .section-title-block { text-align: center; margin-bottom: var(--sp-12); }
 .section-title-block .eyebrow {
@@ -508,7 +519,7 @@ ul { list-style: none; }
   background: linear-gradient(to right, transparent 60%, var(--clr-navy));
 }
 .featured-card-body {
-  background: var(--clr-navy-mid);
+  background: var(--panel-2);
   padding: var(--sp-12);
   display: flex; flex-direction: column; justify-content: center;
   gap: var(--sp-6);
@@ -523,7 +534,7 @@ ul { list-style: none; }
 }
 .featured-card-body h3 {
   font-family: var(--font-serif);
-  font-size: var(--fs-3xl); color: var(--clr-white);
+  font-size: var(--fs-3xl); color: var(--panel-2-text);
   font-style: italic; line-height: 1.2;
 }
 .featured-card-body .composer {
@@ -583,6 +594,8 @@ ul { list-style: none; }
 .card-body {
   padding: var(--sp-6);
   flex: 1; display: flex; flex-direction: column; gap: var(--sp-3);
+  background: var(--panel-2);
+  color: var(--panel-2-text);
 }
 .card-tag {
   font-size: var(--fs-xs); letter-spacing: 0.15em; text-transform: uppercase;
@@ -594,13 +607,15 @@ ul { list-style: none; }
 .card-title {
   font-family: var(--font-serif);
   font-size: var(--fs-xl); color: var(--clr-text); line-height: 1.3;
+  color: var(--panel-2-text);
 }
 .card-meta {
-  font-size: var(--fs-xs); color: var(--clr-text-muted);
+  font-size: var(--fs-xs); 
+  color: var(--panel-2-text);
   letter-spacing: 0.05em;
 }
 .card-excerpt {
-  font-size: var(--fs-sm); color: var(--clr-text-muted);
+  font-size: var(--fs-sm); color: var(--panel-2-text);
   line-height: 1.8; flex: 1;
 }
 .card-link {
@@ -625,7 +640,7 @@ ul { list-style: none; }
 /* ── Mission Statement ──────────────────────────────────────── */
 .mission {
   padding: var(--sp-20) var(--sp-6);
-  background: var(--clr-gold-pale);
+  background: var(--panel-2);
   text-align: center;
 }
 .mission blockquote {
@@ -633,7 +648,7 @@ ul { list-style: none; }
   font-family: var(--font-serif);
   font-size: clamp(var(--fs-xl), 3vw, var(--fs-3xl));
   font-style: italic;
-  color: var(--clr-navy);
+  color: var(--panel-2-text);
   line-height: 1.5;
 }
 .mission blockquote::before,
@@ -650,7 +665,7 @@ ul { list-style: none; }
 /* ── Gallery Strip (Home) ────────────────────────────────────── */
 .gallery-strip {
   padding: var(--sp-20) var(--sp-6);
-  background: var(--clr-white);
+  background: var(--panel-1);
 }
 .gallery-grid {
   max-width: var(--max-w); margin-inline: auto;
@@ -710,7 +725,7 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: 120px 1fr auto;
   gap: var(--sp-6);
-  background: var(--clr-white);
+  background: var(--panel-1);
   border-radius: var(--radius-md);
   border: 1px solid var(--clr-border);
   overflow: hidden;
@@ -720,7 +735,7 @@ ul { list-style: none; }
 .event-row:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
 
 .event-date-block {
-  background: var(--clr-navy);
+  background: var(--panel-2);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   padding: var(--sp-4);
@@ -733,11 +748,11 @@ ul { list-style: none; }
 }
 .event-date-block .day {
   font-family: var(--font-serif);
-  font-size: var(--fs-4xl); color: var(--clr-white);
+  font-size: var(--fs-4xl); color: var(--panel-2-text);
   line-height: 1;
 }
 .event-date-block .year {
-  font-size: var(--fs-xs); color: rgba(255,255,255,.4);
+  font-size: var(--fs-xs); color: var(--panel-2-text);
 }
 
 .event-info {
@@ -805,7 +820,7 @@ ul { list-style: none; }
 
 .news-featured {
   grid-column: 1;
-  background: var(--clr-white);
+  background: var(--panel-1);
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -815,7 +830,7 @@ ul { list-style: none; }
 .news-featured img {
   width: 100%; height: 380px; object-fit: cover;
 }
-.news-featured-body { padding: var(--sp-8); }
+.news-featured-body { padding: var(--sp-8); background: var(--panel-2); color: var(--panel-2-text);}
 .news-featured-body .tag {
   font-size: var(--fs-xs); letter-spacing: 0.15em; text-transform: uppercase;
   color: var(--clr-gold); font-weight: 700; margin-bottom: var(--sp-4);
@@ -826,10 +841,10 @@ ul { list-style: none; }
   line-height: 1.25; margin-bottom: var(--sp-4);
 }
 .news-featured-body .meta {
-  font-size: var(--fs-xs); color: var(--clr-text-muted);
+  font-size: var(--fs-xs); color: var(--panel-2-text);
   letter-spacing: 0.08em; margin-bottom: var(--sp-4);
 }
-.news-featured-body p { color: var(--clr-text-muted); line-height: 1.9; }
+.news-featured-body p { color: var(--panel-2-text); line-height: 1.9; }
 
 .news-grid {
   display: grid; gap: var(--sp-6);
@@ -840,7 +855,7 @@ ul { list-style: none; }
 /* Sidebar */
 .news-sidebar { position: sticky; top: calc(var(--nav-h) + var(--sp-6)); }
 .sidebar-widget {
-  background: var(--clr-white);
+  background: var(--panel-2);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-md);
   padding: var(--sp-6);
@@ -848,7 +863,7 @@ ul { list-style: none; }
 }
 .sidebar-widget h3 {
   font-family: var(--font-serif);
-  font-size: var(--fs-lg); color: var(--clr-navy);
+  font-size: var(--fs-lg); color: var(--panel-2-text);
   margin-bottom: var(--sp-4);
   padding-bottom: var(--sp-3);
   border-bottom: 2px solid var(--clr-gold);
@@ -865,13 +880,13 @@ ul { list-style: none; }
   font-family: var(--font-sans); font-size: var(--fs-sm);
   cursor: pointer; padding: var(--sp-3) var(--sp-4);
   border-radius: var(--radius-sm);
-  color: var(--clr-text-muted);
+  color: var(--panel-2-text);
   transition: all var(--transition);
 }
 .sidebar-filter-btn.active,
 .sidebar-filter-btn:hover {
   background: var(--clr-gold-pale);
-  color: var(--clr-navy); font-weight: 700;
+  color: var(--panel-2-text); font-weight: 700;
 }
 
 /* ============================================================
@@ -904,7 +919,7 @@ ul { list-style: none; }
 /* People Grid */
 .people-section {
   padding: var(--sp-20) var(--sp-6);
-  background: var(--clr-navy);
+  background: var(--panel-2);
 }
 .people-grid {
   max-width: var(--max-w); margin-inline: auto;
@@ -944,7 +959,8 @@ ul { list-style: none; }
 /* Location & Contact */
 .contact-section {
   padding: var(--sp-20) var(--sp-6);
-  background: var(--clr-cream);
+  background: var(--panel-1);
+  color: var(--panel-1-text);
 }
 .contact-grid {
   max-width: var(--max-w); margin-inline: auto;
@@ -1061,6 +1077,65 @@ ul { list-style: none; }
   100% { background-position: -200% 0; }
 }
 .skeleton-row { height: 100px; }
+
+/* ============================================================
+   EVENTBRITE TICKET MODAL
+   ============================================================ */
+.eb-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .72);
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-4);
+}
+.eb-modal-overlay[hidden] { display: none; }
+
+.eb-modal-panel {
+  background: #fff;
+  border-radius: .5rem;
+  width: 100%;
+  max-width: 660px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
+}
+
+.eb-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-4) var(--sp-5);
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+}
+
+.eb-modal-title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lg);
+  color: var(--clr-dark);
+  margin: 0;
+}
+
+.eb-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #888;
+  padding: 0 .25rem;
+  transition: color var(--transition);
+}
+.eb-modal-close:hover,
+.eb-modal-close:focus { color: var(--clr-dark); outline: 2px solid var(--clr-gold); }
+
+#eb-widget-host { padding: var(--sp-4); }
 
 /* ============================================================
    PRINT STYLES
