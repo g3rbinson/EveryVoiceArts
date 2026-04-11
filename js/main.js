@@ -140,7 +140,7 @@ function renderSchedule(events, containerId, filterBtns) {
           </div>
           <div class="event-action">
             ${!date.isPast && ev.eventbriteId
-              ? `<button id="eventbrite-widget-modal-trigger-${escAttr(ev.eventbriteId)}" type="button" class="btn btn-outline-gold">Tickets</button>`
+              ? `<button class="btn btn-outline-gold eb-ticket-btn" data-ebid="${escAttr(ev.eventbriteId)}" data-title="${escAttr(ev.title)}">Tickets</button>`
               : !date.isPast && ev.ticketUrl
               ? `<a href="${escAttr(ev.ticketUrl)}" class="btn btn-outline-gold" rel="noopener noreferrer">Tickets</a>`
               : date.isPast
