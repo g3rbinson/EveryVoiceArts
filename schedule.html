@@ -116,6 +116,7 @@
     </div>
   </footer>
 
+  <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
   <script src="js/main.js"></script>
   <script>
     document.getElementById('footer-year').textContent = new Date().getFullYear();
@@ -124,74 +125,26 @@
 
     loadJSON('data/events.json').then(function(events) {
       renderSchedule(events, 'event-list', filterBtns);
+
+      // Wire up Eventbrite's own modal for each event that has an eventbriteId
+      events.forEach(function(ev) {
+        if (!ev.eventbriteId) return;
+        window.EBWidgets.createWidget({
+          widgetType: 'checkout',
+          eventId: ev.eventbriteId,
+          modal: true,
+          modalTriggerElementId: 'eb-trigger-' + ev.eventbriteId,
+          themeSettings: {
+            brandColor: '#51976e',
+            fontColor:  '#000000',
+            background: '#FFFFFF',
+          },
+          onOrderComplete: function() {
+            console.log('Order complete!');
+          }
+        });
+      });
     });
-  </script>
-
-  <!-- ── Eventbrite Ticket Modal ─────────────────────────────── -->
-  <div id="eb-modal-overlay" class="eb-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="eb-modal-title" hidden>
-    <div class="eb-modal-panel">
-      <div class="eb-modal-header">
-        <h2 id="eb-modal-title" class="eb-modal-title"></h2>
-        <button class="eb-modal-close" aria-label="Close ticket window">&times;</button>
-      </div>
-      <div id="eb-widget-host"></div>
-    </div>
-  </div>
-
-  <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
-  <script>
-    (function () {
-      var overlay    = document.getElementById('eb-modal-overlay');
-      var titleEl    = document.getElementById('eb-modal-title');
-      var widgetHost = document.getElementById('eb-widget-host');
-
-      function openEBWidget(eventId, title) {
-        titleEl.textContent = title || 'Purchase Tickets';
-        widgetHost.innerHTML = '<div id="eb-widget-container"></div>';
-        overlay.hidden = false;
-        document.body.style.overflow = 'hidden';
-
-        setTimeout(function () {
-          if (!window.EBWidgets) return;
-          window.EBWidgets.createWidget({
-            widgetType: 'checkout',
-            eventId: eventId,
-            iframeContainerId: 'eb-widget-container',
-            iframeContainerHeight: 425,
-            themeSettings: {
-              brandColor: '#51976e',
-              fontColor:  '#000000',
-              background: '#FFFFFF',
-            },
-            onOrderComplete: function () {
-              console.log('Order complete!');
-            }
-          });
-        }, 0);
-      }
-
-      function closeEBWidget() {
-        overlay.hidden = true;
-        document.body.style.overflow = '';
-        widgetHost.innerHTML = '';
-      }
-
-      overlay.addEventListener('click', function (e) {
-        if (e.target === overlay) closeEBWidget();
-      });
-
-      overlay.querySelector('.eb-modal-close').addEventListener('click', closeEBWidget);
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && !overlay.hidden) closeEBWidget();
-      });
-
-      document.getElementById('event-list').addEventListener('click', function (e) {
-        var btn = e.target.closest('.eb-ticket-btn');
-        if (!btn) return;
-        openEBWidget(btn.dataset.ebid, btn.dataset.title);
-      });
-    }());
   </script>
 </body>
 </html>
