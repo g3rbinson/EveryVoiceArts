@@ -217,7 +217,7 @@ function renderNews(items, featuredId, gridId, sidebarBtns) {
             <span class="card-tag ${tagClass(item.category)}">${escHtml(item.category)}</span>
             <h3 class="card-title">${escHtml(item.title)}</h3>
             <p class="card-meta">${formatDateLong(item.date)}</p>
-            <p class="card-excerpt">${escHtml(item.excerpt)}</p>
+            <p class="news-card-excerpt">${escHtml(item.excerpt)}</p>
             <span class="card-link" aria-hidden="true">Read more &#8594;</span>
           </div>
         </article>`;
@@ -283,7 +283,7 @@ async function loadHomePreview() {
             <span class="card-tag">${escHtml(item.category)}</span>
             <h3 class="card-title">${escHtml(item.title)}</h3>
             <p class="card-meta">${formatDateLong(item.date)}</p>
-            <p class="card-excerpt">${escHtml(item.excerpt)}</p>
+            <p class="news-card-excerpt">${escHtml(item.excerpt)}</p>
             <a href="news.html" class="card-link" aria-label="Read more about ${escAttr(item.title)}">Read more &#8594;</a>
           </div>
         </article>`;

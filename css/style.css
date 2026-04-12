@@ -19,13 +19,14 @@
   --clr-cream:       #faf6ef;
   --clr-white:       #ffffff;
   --clr-text:        #1a1a2e;
-  --clr-text-muted:  #5a5a72;
+  --clr-text-muted:  #9797ad;
   --clr-border:      #ddd4bf;
   --clr-overlay:     rgba(13, 27, 42, 0.72);
 
   /* Panel Colors — edit these two pairs to retheme all alternating sections */
   --panel-1:      #ffffff;
   --panel-1-text: var(--clr-text);
+  --panel-1-text-muted: var(--clr-text-muted);
   --panel-2:      #000000;
   --panel-2-text: #ffffff;
 
@@ -78,8 +79,8 @@
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
   font-family: var(--font-sans);
-  background: var(--clr-cream);
-  color: var(--clr-text);
+  background: var(--panel-1);
+  color: var(--panel-1-text);
   line-height: 1.7;
 }
 img { display: block; max-width: 100%; height: auto; }
@@ -615,7 +616,7 @@ ul { list-style: none; }
   letter-spacing: 0.05em;
 }
 .card-excerpt {
-  font-size: var(--fs-sm); color: var(--panel-2-text);
+  font-size: var(--fs-sm); color: var(--panel-1-text);
   line-height: 1.8; flex: 1;
 }
 .card-link {
@@ -700,7 +701,7 @@ ul { list-style: none; }
   padding: var(--sp-2) var(--sp-4);
   border: 1px solid var(--clr-border);
   border-radius: 40px;
-  background: transparent;
+  background: var(--clr-cream);
   font-family: var(--font-sans);
   font-size: var(--fs-sm); font-weight: 700;
   letter-spacing: 0.08em; text-transform: uppercase;
@@ -715,6 +716,11 @@ ul { list-style: none; }
   color: var(--clr-navy);
 }
 
+.schedule-card-excerpt {
+  font-size: var(--fs-sm); color: var(--panel-1-text);
+  line-height: 1.8; flex: 1;
+}
+
 .event-list {
   max-width: var(--max-w); margin-inline: auto;
   padding: var(--sp-8) var(--sp-6) var(--sp-20);
@@ -725,7 +731,7 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: 120px 1fr auto;
   gap: var(--sp-6);
-  background: var(--panel-1);
+  background: var(--clr-cream);
   border-radius: var(--radius-md);
   border: 1px solid var(--clr-border);
   overflow: hidden;
@@ -844,7 +850,7 @@ ul { list-style: none; }
   font-size: var(--fs-xs); color: var(--panel-2-text);
   letter-spacing: 0.08em; margin-bottom: var(--sp-4);
 }
-.news-featured-body p { color: var(--panel-2-text); line-height: 1.9; }
+.news-featured-body p { color: var(--panel-2-text-muted); line-height: 1.9; }
 
 .news-grid {
   display: grid; gap: var(--sp-6);
@@ -861,6 +867,12 @@ ul { list-style: none; }
   padding: var(--sp-6);
   margin-bottom: var(--sp-6);
 }
+
+.news-card-excerpt {
+  font-size: var(--fs-sm); color: var(--panel-1-text-muted);
+  line-height: 1.8; flex: 1;
+}
+
 .sidebar-widget h3 {
   font-family: var(--font-serif);
   font-size: var(--fs-lg); color: var(--panel-2-text);
