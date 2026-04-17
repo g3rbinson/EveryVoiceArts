@@ -47,3 +47,72 @@ content:
       - name: image
         label: Image
         type: image
+
+  - name: schedule
+    label: Schedule
+    type: file
+    path: data/events.json
+    format: json
+    list: true
+    view:
+      primary: title
+      sort: date
+      order: asc
+
+    fields:
+      - name: id
+        label: ID
+        type: number
+        hidden: true
+
+      - name: title
+        label: Title
+        type: string
+        required: true
+
+      - name: composer
+        label: Composer
+        type: string
+
+      - name: category
+        label: Category
+        type: string
+
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+
+      - name: time
+        label: Time
+        type: string
+
+      - name: venue
+        label: Venue
+        type: string
+
+      - name: description
+        label: Description
+        type: text
+
+      - name: tickets
+        label: Tickets
+        type: string
+
+      - name: ticketUrl
+        label: Ticket URL
+        type: string
+
+      - name: eventbriteId
+        label: Eventbrite ID
+        type: string
+
+      - name: featured
+        label: Featured
+        type: boolean
+
+      - name: image
+        label: Image
+        type: image
